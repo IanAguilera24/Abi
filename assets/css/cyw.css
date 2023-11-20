@@ -1,0 +1,6 @@
+body {
+    background: linear-gradient(to left, rgba(247, 190, 199, 0.8), rgba(0,0,0,0.1)),
+    url(/assets/img/header-footer/magia.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}

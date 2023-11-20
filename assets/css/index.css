@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+/*Formato de la pagina*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    outline: none; 
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
+    text-transform: capitalize;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    min-height: 100vh;
+}
+
+header .brand img{
+    height: 60px;
+}
+
+/*Contenido del head y body*/
+.section-main{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to left, rgba(241, 118, 138, 0.8), rgba(0,0,0,0.1)), 
+    url(/assets/img/header-footer/love-neon.gif) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 80px;
+}
+
+.section-main h1{
+    color: rgb(255, 255, 255, 0.8);
+    font-size: 60px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 80px;
+    text-shadow: 
+    0 0 10px #fff, 
+    0 0 15px #000, 
+    0 0 15px #000, /* Añadir más sombras */
+    0 0 15px #000;
+    text-align: center;
+}
+
+header{
+    z-index: 999;
+    position: fixed;
+    top:  0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    transition: 0.6s;
+}
+
+header.down{
+    background: #e641d0;
+    padding: 15px 80px;
+}
+
+header .brand{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /*text-decoration: none;*/
+    letter-spacing: 2px;
+}
+
+header .menu{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .menu ul{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .menu ul li{
+    list-style: none;
+}
+
+header .menu a {
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 16px;
+    /*text-decoration: none;*/
+    margin: 0 30px;
+    padding: 7px 12px;
+    border-radius: 20px;
+    transition: 0.3s;
+    transition-property: color, background;
+}
+
+header .menu  a:hover {
+    color: #000;
+    background: #fff;
+}
+
+.section-two{
+    padding: 20px;
+    text-align: center;
+}
+
+.section-two h3{
+    font-size: 3.5rem;
+    color: #444;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.section-two h3 strong{
+    text-transform: uppercase;
+}
+
+.section-two p{
+    font-size: 2.2rem;
+    color: #444;
+    
+    text-transform: uppercase;
+    text-align: center;
+}
+
+header .btn{
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+/*Seccion de los ejercicios*/
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.container .title{
+    font-size: 3.5rem;
+    color: #444;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container .subtitle{
+    font-size: 2.0rem;
+    color: #444;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container .product-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.container .product-container .product{
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    outline: 0.1rem solid #ccc;
+    outline-offset: -1.5rem;
+    cursor: pointer;
+}
+
+.container .product-container .product:hover{
+    outline: 0.2rem solid #222;
+    outline-offset: 0;
+}
+
+.container .product-container .product img{
+    height: 10rem;
+}
+
+.container .product-container .product:hover img{
+    transform: scale(0.9);
+}
+
+.container .product-container .product h3{
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    color: #444;
+}
+
+.container .product-container .product:hover h3{
+    color: #27ae60;
+}
+
+.container .product-container .product .lenguaje{
+    font-size: 2rem;
+    color: #444;
+}
+
+.products-preview{
+    position: fixed;
+    top: 0; 
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-preview .preview{
+    display: none;
+    padding: 0.5rem;
+    text-align: center;
+    background: #fff;
+    position: relative;
+    margin: 0.5rem;
+    width: 35rem;
+}
+
+.products-preview .preview.active{
+    display: inline-block;
+}
+
+.products-preview .preview img{
+    height: 7rem;
+}
+
+.products-preview .preview .fa-times{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    cursor: pointer;
+    color: #444;
+    font-size: 3rem;
+}
+
+.products-preview .preview .fa-times:hover{
+    transform: rotate(90deg);
+}
+
+.products-preview .preview h3{
+    color: #444;
+    padding: 0.5rem 0;
+    font-size: 2rem;
+}
+
+.products-preview .preview p{
+    line-height: 1.5;
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    color: #777;
+}
+
+.products-preview .preview .lenguaje{
+    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    color: #27ae60;
+}
+
+.products-preview .preview .button{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.products-preview .preview .button a{
+    flex: 1 1 16rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+    color: #444;
+    border: 0.1rem solid #444;
+}
+
+.products-preview .preview .button a:hover{
+    background: #444;
+    color: #fff;
+}
+
+.container .product-container a{
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    border: 2px solid #747474;
+}
+
+.container .product-container a:hover{
+    background: #747474;
+}
+
+/*Contenido del Footer*/
+.footer-main{
+    width: 100%;
+    background-color:#e641d0;
+}
+
+.footer-main .group1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.footer-main .group1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-main .group1 .box figure .IpnFoot{
+    width: 80px;
+}
+.footer-main .group1 .box figure .EscomFoot{
+    width: 80px;
+}
+
+.footer-main .group1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.footer-main .group1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.footer-main .group1 .red-social a{
+    display: inline-block;
+    /*text-decoration: none;*/
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #710671;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.footer-main .group1 .red-social a:hover{
+    color: aqua;
+}
+
+.footer-main .group2{
+    background-color: #710671;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+/*Modificacion en funcion del dispositivo*/
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+        min-height: 1280px;
+     }
+    header, header.down{
+        padding: 20px 40px;
+    }
+    header .btn{
+        display: block;
+    }
+    header .menu{
+        position: fixed;
+        background: #e98bdc;
+        min-width: 33px;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        padding: 80px 50px;
+        transition: 0.5s;
+        transition-property: right;
+    }
+    header .menu ul{
+        flex-direction: column;
+    }
+    header .menu.active{
+        right: 0;
+    }
+    header .menu .close-btn{
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 25px;
+    }
+    header .menu a{
+        display: block;
+        font-size: 20px;
+        margin: 20px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width:600px){
+    .section-main h1{
+        font-size: 50px;
+        line-height: 60px;
+    }
+}
+
+@media (max-width:768px){
+    .products-preview .preview img{
+       height: 25rem;
+    }
+ }
+ 
+ @media (max-width:450px){
+    html{
+       font-size: 50%;
+    }
+ }
